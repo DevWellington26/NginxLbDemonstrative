@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  loadbalancer:
+    container_name: loadbalancer
+    build:
+      context: .
+      dockerfile: loadbalancer.Dockerfile
+    ports:
+      - "80:80"
+  node1:
+    container_name: node1
+    build:
+      context: .
+      dockerfile: node1.Dockerfile
+    ports:
+      - "80"
+  node2:
+    container_name: node2
+    build:
+      context: .
+      dockerfile: node2.Dockerfile 
+    ports:
+      - "80"
+
+
